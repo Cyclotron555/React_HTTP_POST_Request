@@ -4,14 +4,21 @@ class PostForm extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      userID: "",
-      title: "",
-      body: ""
+      firstName: "",
+      lastName: "",
+      address: "",
+      city: "",
+      zip: ""
     };
   }
 
   changeHandler = (e) => {
     this.setState({ [e.target.name]: e.target.value });
+  };
+
+  submitHandler = (e) => {
+    e.preventDefault();
+    console.log(this.state);
   };
 
   render() {
@@ -22,7 +29,7 @@ class PostForm extends Component {
           <div>
             <input
               type="text"
-              name="userID"
+              name="firstName"
               value={userID}
               onChange={this.changeHandler}
             />
@@ -30,7 +37,7 @@ class PostForm extends Component {
           <div>
             <input
               type="text"
-              name="title"
+              name="lastName"
               value={title}
               onChange={this.changeHandler}
             />
@@ -38,14 +45,33 @@ class PostForm extends Component {
           <div>
             <input
               type="text"
-              name="body"
+              name="address"
               value={body}
               onChange={this.changeHandler}
             />
           </div>
-          <button type="submit">Submit</button>
+          <div>
+            <input
+              type="text"
+              name="city"
+              value={body}
+              onChange={this.changeHandler}
+            />
+          </div>
+          <div>
+            <input
+              type="text"
+              name="zip"
+              value={body}
+              onChange={this.changeHandler}
+            />
+          </div>
+          <button type="submit" onClick={this.submitHandler}>
+            Submit
+          </button>
         </form>
       </div>
     );
   }
 }
+export default PostForm;

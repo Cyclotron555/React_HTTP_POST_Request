@@ -1,9 +1,10 @@
 import "./styles.css";
+import PostForm from "./PostForm";
 
 export default function App() {
   return (
     <div className="App">
-      <h1>Hello</h1>
+      <PostForm />
     </div>
   );
 }
