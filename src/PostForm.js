@@ -20,17 +20,14 @@ class PostForm extends Component {
   submitHandler = (e) => {
     e.preventDefault();
     console.log(this.state);
-    axios
-      .post(
-        "https://webhook.site/572f95fd-4825-44c0-94e9-b8122af7eed3",
-        this.state
-      )
-      .then((Response) => {
-        console.log(Response);
-      })
-      .catch((error) => {
-        console.log(error);
-      });
+    axios({
+      method: "post",
+      url: "https://webhook.site/572f95fd-4825-44c0-94e9-b8122af7eed3",
+      data: this.state
+    }).then((apiResponse) => {
+      const dta = apiResponse.data;
+      Response.json(dta);
+    });
   };
 
   render() {

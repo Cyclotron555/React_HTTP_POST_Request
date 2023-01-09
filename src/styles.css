@@ -3,20 +3,22 @@
   text-align: center;
 }
 .formDiv {
-  background-color: blue;
+  background-color: coral;
   padding-top: 20px;
   padding-bottom: 20px;
   max-width: 15pc;
   margin: auto;
+  border: 1px solid gray;
+  border-radius: 8px;
 }
 div {
   padding: 5px 5px 5px 5px;
 }
 button {
-  background-color: #f44336;
-  border: none;
-  color: white;
-  padding: 15px 32px;
+  background-color: rgb(31, 138, 31);
+  border-radius: 14px;
+  color: rgb(255, 255, 255);
+  padding: 10px 28px;
   text-align: center;
   text-decoration: none;
   display: inline-block;
