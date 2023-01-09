@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import axios from "axios";
 
 class PostForm extends Component {
   constructor(props) {
@@ -19,12 +20,23 @@ class PostForm extends Component {
   submitHandler = (e) => {
     e.preventDefault();
     console.log(this.state);
+    axios
+      .post(
+        "https://webhook.site/572f95fd-4825-44c0-94e9-b8122af7eed3",
+        this.state
+      )
+      .then((Response) => {
+        console.log(Response);
+      })
+      .catch((error) => {
+        console.log(error);
+      });
   };
 
   render() {
     const { userID, title, body } = this.state;
     return (
-      <div>
+      <div className="formDiv">
         <form>
           <div>
             <input
