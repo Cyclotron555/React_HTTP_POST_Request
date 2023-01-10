@@ -22,16 +22,17 @@ class PostForm extends Component {
     console.log(this.state);
     axios({
       method: "post",
-      url: "https://webhook.site/572f95fd-4825-44c0-94e9-b8122af7eed3",
+      url: "https://dummyapi.io/data/v1/",
       data: this.state
-    }).then((apiResponse) => {
-      const dta = apiResponse.data;
-      Response.json(dta);
+    }).then((result) => {
+      result.json().then((resp) => {
+        console.warn("resp", resp);
+      });
     });
   };
 
   render() {
-    const { userID, title, body } = this.state;
+    const { firstName, lastName, address, city, zip } = this.state;
     return (
       <div className="formDiv">
         <form>
@@ -39,7 +40,7 @@ class PostForm extends Component {
             <input
               type="text"
               name="firstName"
-              value={userID}
+              value={firstName}
               onChange={this.changeHandler}
             />
           </div>
@@ -47,7 +48,7 @@ class PostForm extends Component {
             <input
               type="text"
               name="lastName"
-              value={title}
+              value={lastName}
               onChange={this.changeHandler}
             />
           </div>
@@ -55,7 +56,7 @@ class PostForm extends Component {
             <input
               type="text"
               name="address"
-              value={body}
+              value={address}
               onChange={this.changeHandler}
             />
           </div>
@@ -63,7 +64,7 @@ class PostForm extends Component {
             <input
               type="text"
               name="city"
-              value={body}
+              value={city}
               onChange={this.changeHandler}
             />
           </div>
@@ -71,7 +72,7 @@ class PostForm extends Component {
             <input
               type="text"
               name="zip"
-              value={body}
+              value={zip}
               onChange={this.changeHandler}
             />
           </div>
